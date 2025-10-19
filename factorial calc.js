@@ -1,19 +1,41 @@
+console.log("let's begin")
+function calc(a) {
+      if (typeof a !== 'number' || Number.isNaN(a)) {
+      throw new Error("Input must be a valid number");
+   }
+    if(a < 0){
+       throw new Error("enter a positive value"); 
+       
+    }
+    else if (a == 0) {
+        return 1;
+    }
+    else {
 
-// Write a program to calculate factorial of a number using reduce and using for loops
+        let arr = []
+        for (let i = 1; i <= a; i++) {
+            arr.push(i)
 
 
-// 6! = 6*5*4*3*2*1
+        }
 
-let arr=[]
-const value = 5
-// let number= prompt("Enter a number for facotrial")
-for (let index = 1; index <=value; index++) {
-    const element = arr[index];
-    arr.push(index)
-    
+        const result = arr.reduce((n, b) => { return n * b })
+        return result
+    }
+
 }
-console.log(arr)
-const red=(a,b)=>{
-    return a*b
+
+function testCalc(input) {
+    try {
+        console.log(calc(input));
+    } catch (error) {
+        console.error("Error caught:", error.message);
+    }
 }
-console.log("The Factorial of the given number is: " ,arr.reduce(red))
+
+
+testCalc(6)           
+testCalc(1)        
+testCalc(0)         
+testCalc(-5)         
+testCalc("dffdfddf") 
