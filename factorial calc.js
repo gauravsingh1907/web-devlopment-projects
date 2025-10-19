@@ -1,6 +1,6 @@
 console.log("let's begin")
 function calc(a) {
-      if (typeof a !== 'number' || Number.isNaN(a)) {
+      if (typeof a !== 'number') {
       throw new Error("Input must be a valid number");
    }
     if(a < 0){
@@ -39,3 +39,4 @@ testCalc(1)
 testCalc(0)         
 testCalc(-5)         
 testCalc("dffdfddf") 
+
